@@ -11,120 +11,139 @@
       background: #f4f4f4;
       color: #333;
     }
+
     header {
-      background: #2e7d32;
+      background: #1a237e;
       color: white;
       text-align: center;
       padding: 1rem;
-    }
-    .header-logo {
-      max-width: 80px;
-      border-radius: 50%;
-    }
-    nav {
-      background: #388e3c;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      position: relative;
     }
 
-    /* Hamburger menu */
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-    #menu-links {
+    nav {
+      background: #283593;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      padding: 0.5rem;
     }
-    @media (max-width: 700px) {
-      #menu-links {
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background: #3949ab;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: white;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
         display: none;
         flex-direction: column;
-        text-align: center;
+        align-items: center;
       }
-      #menu-links a {
-        display: block;
-        padding: 0.5rem;
+      nav.show {
+        display: flex;
       }
-      .menu-toggle {
+      .hamburger {
         display: block;
       }
     }
 
     main {
       padding: 1rem;
+      max-width: 1200px;
+      margin: auto;
     }
+
     section {
       background: white;
       margin: 1rem 0;
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #2e7d32;
-      color: white;
-    }
+
     #clock {
       font-weight: bold;
-      font-size: 1rem;
       margin-top: 0.5rem;
     }
+
     #countdown {
       font-size: 1.2rem;
       color: #d32f2f;
       font-weight: bold;
     }
-    #gallery-slider {
-      text-align: center;
-    }
+
     #gallery-slider img {
-      width: 90%;
-      max-width: 500px;
+      width: 100%;
+      max-width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-    #visitor-count {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: #ddd;
+
+    footer {
+      background: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Popup */
+    #welcomePopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 9999;
+      text-align: center;
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756412692/Screenshot_20250828-232330_2_mt8zhw.jpg" alt="Kilifi County Chess Association Logo" class="header-logo" />
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
     <h1>Kilifi County Chess Association</h1>
   </header>
 
-  <nav aria-label="Primary navigation">
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-    <div id="menu-links">
-      <a href="#upcoming-tournaments">Upcoming Tournaments</a>
-      <a href="#chess-in-schools">Chess in Schools</a>
-      <a href="#home-training">Home Chess Training</a>
-      <a href="#weekend-practice">Weekend Chess Practice</a>
-      <a href="#merchandise">Chess Merchandise</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#play-section">Play</a>
-      <a href="#move-of-the-day-section">Move of the Day</a>
-      <a href="#contact">Contact Us</a>
-    </div>
+  <nav id="nav">
+    <a href="#upcoming-tournaments">Upcoming Tournaments</a>
+    <a href="#chess-in-schools">Chess in Schools</a>
+    <a href="#home-training">Home Chess Training</a>
+    <a href="#weekend-practice">Weekend Chess Practice</a>
+    <a href="#merchandise">Chess Merchandise</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#play-section">Play</a>
+    <a href="#move-of-the-day-section">Move of the Day</a>
+    <a href="#contact">Contact Us</a>
   </nav>
 
   <main>
@@ -134,10 +153,30 @@
       <p id="countdown"></p>
     </section>
 
+    <section id="chess-in-schools">
+      <h2>Chess in Schools</h2>
+      <p>We aim to introduce chess to students in Kilifi County schools, nurturing critical thinking and strategy skills.</p>
+    </section>
+
+    <section id="home-training">
+      <h2>Home Chess Training</h2>
+      <p>Online and offline resources for individuals interested in improving their chess skills from home.</p>
+    </section>
+
+    <section id="weekend-practice">
+      <h2>Weekend Chess Practice</h2>
+      <p>Join our weekly meetups for friendly practice and chess community building.</p>
+    </section>
+
+    <section id="merchandise">
+      <h2>Chess Merchandise</h2>
+      <p>Get your chess boards, clocks, and branded apparel to support the association.</p>
+    </section>
+
     <section id="gallery">
       <h2>Gallery</h2>
       <div id="gallery-slider">
-        <img id="slide" src="https://via.placeholder.com/500x300?text=Chess+Event+1" alt="Chess Event Image">
+        <img id="slide" src="https://via.placeholder.com/800x400?text=Chess+Event+1" alt="Chess Event">
       </div>
     </section>
   </main>
@@ -145,36 +184,30 @@
   <footer>
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
     <div id="clock"></div>
-    <div id="visitor-count"></div>
   </footer>
 
-  <!-- JavaScript Features -->
+  <!-- Popup -->
+  <div id="welcomePopup">
+    <h2>Welcome to Kilifi County Chess Association</h2>
+    <p>Building minds through chess. Enjoy your visit!</p>
+  </div>
+
   <script>
-    // Hamburger menu toggle
+    // Hamburger toggle
     function toggleMenu() {
-      const links = document.getElementById("menu-links");
-      if (links.style.display === "flex") {
-        links.style.display = "none";
-      } else {
-        links.style.display = "flex";
-      }
+      document.getElementById("nav").classList.toggle("show");
     }
 
-    // 1. Pop-up welcome
-    window.onload = function() {
-      alert("Welcome to Kilifi County Chess Association!");
-    };
-
-    // 2. Live clock
+    // Clock
     setInterval(() => {
-      document.getElementById("clock").innerHTML = "Current Time: " + new Date().toLocaleTimeString();
+      document.getElementById("clock").innerText = "Current Time: " + new Date().toLocaleTimeString();
     }, 1000);
 
-    // 3. Image slider
+    // Gallery slider
     let images = [
-      "https://via.placeholder.com/500x300?text=Chess+Event+1",
-      "https://via.placeholder.com/500x300?text=Chess+Event+2",
-      "https://via.placeholder.com/500x300?text=Chess+Event+3"
+      "https://via.placeholder.com/800x400?text=Chess+Event+1",
+      "https://via.placeholder.com/800x400?text=Chess+Event+2",
+      "https://via.placeholder.com/800x400?text=Chess+Event+3"
     ];
     let i = 0;
     setInterval(() => {
@@ -182,7 +215,7 @@
       document.getElementById("slide").src = images[i];
     }, 4000);
 
-    // 4. Countdown to next tournament (example: Dec 20, 2025)
+    // Countdown
     let tournamentDate = new Date("Dec 20, 2025 10:00:00").getTime();
     setInterval(() => {
       let now = new Date().getTime();
@@ -199,13 +232,14 @@
         "Next Tournament: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     }, 1000);
 
-    // 5. Visitor counter
-    if (localStorage.pagecount) {
-      localStorage.pagecount = Number(localStorage.pagecount) + 1;
-    } else {
-      localStorage.pagecount = 1;
-    }
-    document.getElementById("visitor-count").innerHTML = "You have visited this site " + localStorage.pagecount + " times.";
+    // Popup show + auto disappear
+    window.onload = function() {
+      let popup = document.getElementById("welcomePopup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 4000); // disappears after 4 seconds
+    };
   </script>
 </body>
 </html>
