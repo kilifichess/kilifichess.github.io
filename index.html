@@ -168,6 +168,33 @@
     .social-links a:hover {
       color: #00aced; /* Twitter blue */
     }
+    /* Partners section */
+    #partners {
+      text-align: center;
+    }
+    #partners ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    #partners li {
+      background: #004080;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 64, 128, 0.6);
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    #partners li:hover {
+      background: #00264d;
+      cursor: default;
+    }
   </style>
 </head>
 <body>
@@ -197,7 +224,6 @@
         To make Kilifi a leading chess hub in Kenya, recognized for developing world-class players, integrating chess into schools, and promoting the values of sportsmanship, critical thinking, and lifelong learning.
       </p>
     </section>
-
     <section id="top-players" aria-label="Top Chess Players">
       <h2>Top Players of Kilifi County</h2>
       <div class="players-grid">
@@ -239,37 +265,30 @@
         </article>
       </div>
     </section>
-
     <section id="upcoming-tournaments" aria-label="Upcoming Tournaments">
       <h2>Upcoming Tournaments</h2>
       <p>Stay tuned! Dates and details of upcoming Kilifi County chess tournaments will be announced here.</p>
     </section>
-
     <section id="chess-in-schools" aria-label="Chess In Schools">
       <h2>Chess in Schools</h2>
       <p>We collaborate with schools across Kilifi County to introduce chess clubs and offer chess training to young minds, promoting critical thinking and problem-solving skills.</p>
     </section>
-
     <section id="home-training" aria-label="Home Chess Training">
       <h2>Home Chess Training</h2>
       <p>Access online resources, tutorials, and training modules designed for players to improve their chess skills from the comfort of their homes.</p>
     </section>
-
     <section id="weekend-practice" aria-label="Weekend Chess Practice">
       <h2>Weekend Chess Practice</h2>
       <p>Join us every weekend for practice sessions open to all skill levels. Dates, times, and venues are shared regularly, fostering community and friendly competition.</p>
     </section>
-
     <section id="merchandise" aria-label="Chess Merchandise">
       <h2>Chess Merchandise</h2>
       <p>Show your Kilifi Chess pride! We offer official merchandise including chess sets, apparel, and accessories. Check back soon for an online store launch.</p>
     </section>
-
     <section id="gallery" aria-label="Gallery">
       <h2>Gallery</h2>
       <p>Explore photos from tournaments, training sessions, school programs, and community events celebrating chess across Kilifi County.</p>
     </section>
-
     <section id="play-section" aria-label="Play Chess Against Software">
       <h2>Play Chess</h2>
       <label for="strength-select">Choose playing strength:</label>
@@ -285,10 +304,21 @@
         <p>Chess playing feature coming soon!</p>
       </div>
     </section>
-
     <section id="move-of-the-day-section" aria-label="Move of the Day">
       <h2>Move of the Day</h2>
       <p id="move-of-the-day">♞ Nf3! The knight coming to f3, a classic and powerful move developing control over the center.</p>
+    </section>
+
+    <section id="partners" aria-label="Partners">
+      <h2>Our Partners</h2>
+      <ul>
+        <li>Kilifi County Chess Association</li>
+        <li>Chess Kenya Federation</li>
+        <li>FIDE</li>
+        <li>Mombasa Chess Club</li>
+        <li>Lighthouse Chess Club</li>
+        <li>Pwani University</li>
+      </ul>
     </section>
 
     <section id="contact" aria-label="Contact Us">
@@ -300,7 +330,6 @@
         </svg>
         +254 708 141968
       </a>
-
       <div class="social-links" aria-label="Social media links">
         <a href="https://facebook.com/kilifichess" target="_blank" rel="noopener" aria-label="Kilifi County Chess Association Facebook page" title="Facebook">&#x1F4F7;</a>
         <a href="https://twitter.com/kilifichess" target="_blank" rel="noopener" aria-label="Kilifi County Chess Association Twitter page" title="Twitter">&#x1F426;</a>
@@ -313,4 +342,4 @@
   </footer>
 </body>
   </html>
-          
+  
