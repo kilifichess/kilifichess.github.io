@@ -24,7 +24,6 @@
       font-size: 2.5rem;
       letter-spacing: 2px;
     }
-    /* New CSS for the logo */
     .header-logo {
       max-width: 240px;
       height: auto;
@@ -311,40 +310,34 @@
       </div>
     </section>
   </main>
-  
   <footer>
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
   </footer>
 
-  <!-- Include libraries -->
+  <!-- LIBRARIES -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
-  <!-- Stockfish engine as a Web Worker from CDN -->
-  <script>
-    // Stockfish worker loader via public CDN or fallback URL:
-    // Using Stockfish from 'https://cdn.jsdelivr.net/npm/stockfish@15.1/stockfish.min.js' as a Worker file
-    // Note: Adjust path if needed or host your own version
-  </script>
 
+  <!-- STOCKFISH WEB WORKER -->
   <script>
     $(function() {
       var board = null;
       var game = new Chess();
 
-      // Strength level determines search depth (simple mapping)
+      // Depth map for playing strength
       const strengthMap = {
-        1: 5,  // Beginner
-        2: 8,  // Easy
-        3: 12, // Intermediate
-        4: 16, // Advanced
-        5: 20  // Master
+        1: 5,
+        2: 8,
+        3: 12,
+        4: 16,
+        5: 20
       };
-
+      var searchDepth = strengthMap[3]; // default Intermediate
+      
       var engine = new Worker('https://cdn.jsdelivr.net/npm/stockfish@15.1/stockfish.min.js');
       var engineReady = false;
       var engineBusy = false;
-      var searchDepth = strengthMap[3];  // Default intermediate
 
       var statusEl = document.getElementById('status');
       var strengthSelect = document.getElementById('strength-select');
@@ -354,6 +347,7 @@
 
       engine.onmessage = function(event) {
         var line = event.data;
+
         if (line === 'uciok') {
           engineReady = true;
           statusEl.textContent = 'Engine ready. Your move!';
@@ -361,7 +355,6 @@
         if (line === 'readyok') {
           engineReady = true;
         }
-        // Best move response from Stockfish
         if (line.startsWith('bestmove')) {
           var bestMove = line.split(' ')[1];
           game.move(bestMove, { sloppy: true });
@@ -403,12 +396,12 @@
         if (move === null) return 'snapback';
 
         board.position(game.fen());
+
         if (game.game_over()) {
           statusEl.textContent = 'Game Over!';
           return;
         }
 
-        // Delay engine move so user sees theirs applied first
         setTimeout(makeEngineMove, 250);
       }
 
@@ -416,22 +409,20 @@
         board.position(game.fen());
       }
 
-      // Initialize chessboard
       board = Chessboard('chessboard', {
         draggable: true,
         position: 'start',
         onDragStart: onDragStart,
         onDrop: onDrop,
         onSnapEnd: onSnapEnd,
-        pieceTheme: 'https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png',
+        pieceTheme: 'https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png'
       });
 
-      // Strength selector changes depth search
       strengthSelect.addEventListener('change', function() {
         searchDepth = strengthMap[this.value];
       });
     });
   </script>
 </body>
-                                </html>
-                                       
+    </html>
+
