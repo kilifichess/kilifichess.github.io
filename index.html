@@ -6,7 +6,6 @@
   <title>Kilifi County Chess Association</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
   <style>
-    /* Your entire original CSS here as it was */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -137,8 +136,8 @@
     }
     #chessboard {
       margin: 1rem auto;
-      width: 400px;
-      max-width: 100%;
+      max-width: 360px;
+      width: 100%;
       border-radius: 8px;
       box-shadow: 0 0 8px rgb(0 64 128 / 0.4);
     }
@@ -153,12 +152,102 @@
       border-radius: 4px;
       border: 1px solid #004080;
     }
-    #status {
+    #move-of-the-day {
       font-weight: 600;
+      font-size: 1.1rem;
       color: #004080;
-      min-height: 24px;
+      margin-top: 0.5rem;
+      font-family: monospace;
     }
-    /* Add rest of your CSS here */
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.6rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #00aced;
+    }
+    #partners {
+      text-align: center;
+    }
+    #partners ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    #partners li {
+      background: #004080;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 64, 128, 0.6);
+      user-select: none;
+      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    #partners li:hover {
+      background: #00264d;
+      cursor: default;
+    }
+    #partners li img {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      object-fit: contain;
+      background: white;
+      padding: 2px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    }
+    #partners li a {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      gap: 0.75rem;
+      font-weight: 600;
+    }
+    #partners li a:hover {
+      text-decoration: underline;
+    }
+    /* Style for Upcoming Tournaments links */
+    .tournament-link, .venue-link {
+      color: #004080;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .tournament-link:hover, .venue-link:hover {
+      text-decoration: underline;
+    }
+    .register-link {
+      margin-left: 1rem;
+      background-color: #004080;
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .register-link:hover {
+      background-color: #00264d;
+    }
+    .tournament-item {
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -178,10 +267,82 @@
     <a href="#contact">Contact Us</a>
   </nav>
   <main>
-    <!-- Paste other sections here from your original code -->
-    <!-- Omitted for brevity -->
-
-    <!-- Play section with embedded chess game -->
+    <section class="mission-vision" aria-label="Mission and Vision">
+      <h2>Our Mission</h2>
+      <p>To promote the game of chess across Kilifi County by nurturing talent, encouraging strategic thinking, and fostering a vibrant chess community inclusive of players of all ages and skill levels.</p>
+      <h2>Our Vision</h2>
+      <p>To make Kilifi a leading chess hub in Kenya, recognized for developing world-class players, integrating chess into schools, and promoting the values of sportsmanship, critical thinking, and lifelong learning.</p>
+    </section>
+    <section id="top-players" aria-label="Top Chess Players">
+      <h2>Top Players of Kilifi County</h2>
+      <div class="players-grid">
+        <article class="player-card">
+          <a href="https://ratings.fide.com/profile/10802541" target="_blank" rel="noopener" title="Master Jackson Kalema FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/FB_IMG_1756595834129_gznrml.jpg" alt="Master Jackson Kalema" />
+            <p>Master Jackson Kalema</p>
+          </a>
+        </article>
+        <article class="player-card">
+          <a href="https://ratings.fide.com/profile/10815023" target="_blank" rel="noopener" title="Chahindi Mbiu Muluda FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/IMG_20250816_141244_197_z5kcdo.jpg" alt="Chahindi Mbiu Muluda" />
+            <p>Chahindi Mbiu Muluda</p>
+          </a>
+        </article>
+        <article class="player-card">
+          <a href="https://ratings.fide.com/profile/10831312" target="_blank" rel="noopener" title="Ngugi Clinton FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598258/FB_IMG_1756595683097_nng5iy.jpg" alt="Ngugi Clinton" />
+            <p>Ngugi Clinton</p>
+          </a>
+        </article>
+        <article class="player-card">
+          <a href="https://ratings.fide.com/profile/10823174" target="_blank" rel="noopener" title="Daniel Kimaiga FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/WhatsApp-Image-2019-10-20-at-4.47.05-PM-768x627_jvk9vl.jpg" alt="Daniel Kimaiga" />
+            <p>Daniel Kimaiga</p>
+          </a>
+        </article>
+        <article class="player-card">
+          <a href="https://ratings.fide.com/profile/1508814" target="_blank" rel="noopener" title="Jenssveen Trym FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598259/IMG-20250712-WA0039_vw0q3k.jpg" alt="Jenssveen Trym" />
+            <p>Jenssveen Trym</p>
+          </a>
+        </article>
+      </div>
+    </section>
+    <section id="upcoming-tournaments" aria-label="Upcoming Tournaments">
+      <h2>Upcoming Tournaments</h2>
+      <div class="tournament-item">
+        <span class="tournament-link">MCC Monthly Rated Tournament</span> — Venue: 
+        <a href="https://maps.app.goo.gl/H2Uznq4HJRhdHemC6" class="venue-link" target="_blank" rel="noopener">Khadija Secondary School</a><br />
+        Date: 6th September 2025<br />
+        <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
+      </div>
+      <div class="tournament-item">
+        <span class="tournament-link">Mombasa Open Chess Championship 2025</span> — Venue: 
+        <a href="https://maps.app.goo.gl/56fNJXtDmzyAYHDp8" class="venue-link" target="_blank" rel="noopener">Light International School Mombasa</a><br />
+        Dates: 10th to 12th October 2025<br />
+        <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
+      </div>
+    </section>
+    <section id="chess-in-schools" aria-label="Chess In Schools">
+      <h2>Chess in Schools</h2>
+      <p>We collaborate with schools across Kilifi County to introduce chess clubs and offer chess training to young minds, promoting critical thinking and problem-solving skills.</p>
+    </section>
+    <section id="home-training" aria-label="Home Chess Training">
+      <h2>Home Chess Training</h2>
+      <p>Access online resources, tutorials, and training modules designed for players to improve their chess skills from the comfort of their homes.</p>
+    </section>
+    <section id="weekend-practice" aria-label="Weekend Chess Practice">
+      <h2>Weekend Chess Practice</h2>
+      <p>Join us every weekend for practice sessions open to all skill levels. Dates, times, and venues are shared regularly, fostering community and friendly competition.</p>
+    </section>
+    <section id="merchandise" aria-label="Chess Merchandise">
+      <h2>Chess Merchandise</h2>
+      <p>Show your Kilifi Chess pride! We offer official merchandise including chess sets, apparel, and accessories. Check back soon for an online store launch.</p>
+    </section>
+    <section id="gallery" aria-label="Gallery">
+      <h2>Gallery</h2>
+      <p>Explore photos from tournaments, training sessions, school programs, and community events celebrating chess across Kilifi County.</p>
+    </section>
     <section id="play-section" aria-label="Play Chess Against Software">
       <h2>Play Chess</h2>
       <label for="strength-select">Choose playing strength:</label>
@@ -192,27 +353,83 @@
         <option value="4">Advanced</option>
         <option value="5">Master</option>
       </select>
-      <div id="chessboard" aria-label="Chessboard"></div>
-      <p id="status">Engine loading...</p>
+      <div id="chessboard" aria-label="Chessboard" style="width: 400px"></div>
+      <p id="status" style="font-weight:600; color:#004080;"></p>
     </section>
-    
-    <!-- Paste other sections here as per your original code -->
+    <section id="move-of-the-day-section" aria-label="Move of the Day">
+      <h2>Move of the Day</h2>
+      <p id="move-of-the-day">♞ Nf3! The knight coming to f3, a classic and powerful move developing control over the center.</p>
+    </section>
+    <section id="partners" aria-label="Partners">
+      <h2>Our Partners</h2>
+      <ul>
+        <li>
+          <a href="https://eservices.kilifi.go.ke/" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590339/download_k6zb3y.jpg" alt="Kilifi County Government Logo" />
+            Kilifi County Government
+          </a>
+        </li>
+        <li>
+          <a href="https://chesskenya.co.ke/" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590177/download_2_akuvfa.png" alt="Chess Kenya Federation Logo" />
+            Chess Kenya Federation
+          </a>
+        </li>
+        <li>
+          <a href="https://www.fide.com/" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590177/download_3_hwxxmc.png" alt="FIDE Logo" />
+            FIDE
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/MombasaChessClub" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590178/images_1_bdt24b.jpg" alt="Mombasa Chess Club Logo" />
+            Mombasa Chess Club
+          </a>
+        </li>
+        <li>
+          <a href="https://www.lighthousechessclub.com/" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590177/download_bijm4c.png" alt="Lighthouse Chess Club Logo" />
+            Lighthouse Chess Club
+          </a>
+        </li>
+        <li>
+          <a href="https://www.pu.ac.ke/" target="_blank" rel="noopener">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756590339/download_1_dl7rrk.jpg" alt="Pwani University Logo" />
+            Pwani University
+          </a>
+        </li>
+      </ul>
+    </section>
+    <section id="contact" aria-label="Contact Us">
+      <h2>Contact Us</h2>
+      <p>Reach out via WhatsApp for inquiries, membership, or support.</p>
+      <a class="contact-whatsapp" href="https://wa.me/254708141968" target="_blank" rel="noopener" aria-label="Contact Kilifi County Chess Association on WhatsApp +254 708 141968">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.52 3.48A11.809 11.809 0 0 0 12 .003C6.477.003 2.002 4.477 2.002 9.998c0 1.767.463 3.503 1.341 5.006L.24 23.397l8.648-3.353a9.899 9.899 0 0 0 3.112.54h.001c6.523 0 11.998-4.474 11.998-9.997a11.804 11.804 0 0 0-3.58-8.111zm-8.517 16.42c-2.296 0-4.43-1.2-5.555-3.237l-.399-.711-2.318.9.779-2.388-.422-.705A5.755 5.755 0 0 1 6.166 7.66c.972-.995 2.307-1.537 3.829-1.537 2.295 0 4.43 1.2 5.555 3.237 1.123 2.036.748 4.524-.946 6.286-.213.254-.466.49-.755.705a5.651 5.651 0 0 1-3.787 1.553zm3.374-6.873c-.19-.087-1.122-.554-1.297-.616-.186-.066-.323-.1-.46.086-.138.185-.53.615-.649.74-.12.128-.244.144-.451.05-.205-.097-.865-.318-1.65-1.02-.61-.544-1.02-1.214-1.142-1.419-.12-.204-.013-.315.086-.402.088-.088.19-.228.287-.343.094-.114.125-.19.188-.316.06-.128.03-.243-.015-.35-.044-.115-.457-1.098-.627-1.5-.165-.39-.33-.338-.455-.344-.12-.007-.254-.01-.39-.01-.134 0-.35.05-.533.243-.182.192-.695.68-.695 1.656 0 .976.712 1.916.811 2.05.096.13 1.399 2.136 3.392 2.993.474.205.843.328 1.132.42.475.156.907.134 1.25.08.38-.06 1.162-.474 1.327-.933.163-.458.163-.852.114-.933s-.188-.13-.377-.217z"></path>
+        </svg>
+        +254 708 141968
+      </a>
+      <div class="social-links" aria-label="Social media links">
+        <a href="https://facebook.com/kilifichess" target="_blank" rel="noopener" aria-label="Kilifi County Chess Association Facebook page" title="Facebook">&#x1F4F7;</a>
+        <a href="https://twitter.com/kilifichess" target="_blank" rel="noopener" aria-label="Kilifi County Chess Association Twitter page" title="Twitter">&#x1F426;</a>
+        <a href="https://instagram.com/kilifichess" target="_blank" rel="noopener" aria-label="Kilifi County Chess Association Instagram page" title="Instagram">&#x1F4F8;</a>
+      </div>
+    </section>
   </main>
   <footer>
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
   </footer>
-
-  <!-- Load JS -->
+  <!-- LIBRARIES -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
-  
-  <!-- Stockfish Web Worker & Chess game code -->
+  <!-- STOCKFISH WEB WORKER -->
   <script>
     $(function() {
       var board = null;
       var game = new Chess();
-
+      // Depth map for playing strength
       const strengthMap = {
         1: 5,
         2: 8,
@@ -220,26 +437,27 @@
         4: 16,
         5: 20
       };
-      var searchDepth = strengthMap[3]; // Intermediate default
-
+      var searchDepth = strengthMap[3]; // default Intermediate
+      
       var engine = new Worker('https://cdn.jsdelivr.net/npm/stockfish@15.1/stockfish.min.js');
       var engineReady = false;
       var engineBusy = false;
-
       var statusEl = document.getElementById('status');
       var strengthSelect = document.getElementById('strength-select');
-
       engine.postMessage('uci');
-
+      engine.postMessage('isready');
       engine.onmessage = function(event) {
         var line = event.data;
-        if (line === 'uciok' || line === 'readyok') {
+        if (line === 'uciok') {
           engineReady = true;
-          if (!engineBusy) statusEl.textContent = 'Engine ready. Your move!';
+          statusEl.textContent = 'Engine ready. Your move!';
+        }
+        if (line === 'readyok') {
+          engineReady = true;
         }
         if (line.startsWith('bestmove')) {
-          var bestmove = line.split(' ')[1];
-          game.move(bestmove, { sloppy: true });
+          var bestMove = line.split(' ')[1];
+          game.move(bestMove, { sloppy: true });
           board.position(game.fen());
           engineBusy = false;
           if (game.game_over()) {
@@ -249,7 +467,6 @@
           }
         }
       };
-
       function makeEngineMove() {
         if (!engineReady || engineBusy) return;
         engineBusy = true;
@@ -257,33 +474,31 @@
         engine.postMessage('position fen ' + game.fen());
         engine.postMessage('go depth ' + searchDepth);
       }
-
       function onDragStart(source, piece) {
-        if (engineBusy || game.game_over()) return false;
-        // prevent moving opposing pieces
+        if (game.in_checkmate() || game.in_stalemate() || engineBusy) return false;
         if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
             (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
           return false;
         }
-        return true;
       }
-
       function onDrop(source, target) {
         if (engineBusy) return 'snapback';
-        var move = game.move({ from: source, to: target, promotion: 'q' });
+        var move = game.move({
+          from: source,
+          to: target,
+          promotion: 'q'
+        });
         if (move === null) return 'snapback';
         board.position(game.fen());
-        if (!game.game_over()) {
-          setTimeout(makeEngineMove, 250);
-        } else {
+        if (game.game_over()) {
           statusEl.textContent = 'Game Over!';
+          return;
         }
+        setTimeout(makeEngineMove, 250);
       }
-
       function onSnapEnd() {
         board.position(game.fen());
       }
-
       board = Chessboard('chessboard', {
         draggable: true,
         position: 'start',
@@ -292,7 +507,6 @@
         onSnapEnd: onSnapEnd,
         pieceTheme: 'https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png'
       });
-
       strengthSelect.addEventListener('change', function() {
         searchDepth = strengthMap[this.value];
       });
@@ -300,5 +514,3 @@
   </script>
 </body>
 </html>
-
-          
