@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kilifi County Chess Association</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,7 +56,7 @@
       background: white;
       padding: 1.5rem 2rem;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     h2 {
       border-bottom: 3px solid #004080;
@@ -81,7 +80,7 @@
       background: #e6f0ff;
       border-radius: 8px;
       padding: 1rem;
-      box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
     .player-card img {
       width: 120px;
@@ -128,80 +127,36 @@
       text-align: center;
       padding: 1rem 2rem;
     }
-    #play-section {
-      background: #e6f0ff;
-      border-radius: 8px;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-    #chessboard {
-      margin: 1rem auto;
-      max-width: 360px;
+    #play-section iframe {
       width: 100%;
+      max-width: 600px;
+      height: 600px;
+      border: none;
       border-radius: 8px;
-      box-shadow: 0 0 8px rgb(0 64 128 / 0.4);
+      box-shadow: 0 0 12px rgba(0,64,128,0.4);
     }
-    label {
-      font-weight: 600;
-      margin-right: 0.5rem;
-    }
-    select {
-      margin-bottom: 1rem;
-      padding: 0.3rem 0.6rem;
-      font-size: 1rem;
-      border-radius: 4px;
-      border: 1px solid #004080;
-    }
-    #move-of-the-day {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #004080;
-      margin-top: 0.5rem;
-      font-family: monospace;
-    }
-    .social-links {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-    }
-    .social-links a {
-      color: white;
-      font-size: 1.6rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .social-links a:hover {
-      color: #00aced;
-    }
-    #partners {
-      text-align: center;
-    }
+    /* Partners vertical pill buttons style */
     #partners ul {
       list-style-type: none;
       padding: 0;
       margin: 1rem 0 0 0;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
     }
     #partners li {
       background: #004080;
       color: white;
       padding: 0.5rem 1rem;
-      border-radius: 20px;
+      border-radius: 24px;
       font-weight: 600;
       box-shadow: 0 2px 6px rgba(0, 64, 128, 0.6);
-      user-select: none;
-      transition: background 0.3s ease;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-    }
-    #partners li:hover {
-      background: #00264d;
-      cursor: default;
+      gap: 1rem;
+      min-width: 250px;
     }
     #partners li img {
       width: 32px;
@@ -213,40 +168,28 @@
       box-shadow: 0 0 3px rgba(0,0,0,0.3);
     }
     #partners li a {
+      color: white;
+      text-decoration: none;
       display: flex;
       align-items: center;
-      color: white;
-      text-decoration: none;
-      gap: 0.75rem;
-      font-weight: 600;
+      gap: 1rem;
+      width: 100%;
     }
-    #partners li a:hover {
-      text-decoration: underline;
-    }
-    /* Style for Upcoming Tournaments links */
-    .tournament-link, .venue-link {
-      color: #004080;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .tournament-link:hover, .venue-link:hover {
-      text-decoration: underline;
-    }
+    /* Register button styling per screenshot */
     .register-link {
-      margin-left: 1rem;
       background-color: #004080;
       color: white;
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      font-weight: 600;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 0.3rem;
+      transition: background-color 0.3s ease;
     }
     .register-link:hover {
       background-color: #00264d;
-    }
-    .tournament-item {
-      margin-bottom: 1rem;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -312,14 +255,14 @@
       <h2>Upcoming Tournaments</h2>
       <div class="tournament-item">
         <span class="tournament-link">MCC Monthly Rated Tournament</span> — Venue: 
-        <a href="https://maps.app.goo.gl/H2Uznq4HJRhdHemC6" class="venue-link" target="_blank" rel="noopener">Khadija Secondary School</a><br />
-        Date: 6th September 2025<br />
+        <a href="https://maps.app.goo.gl/H2Uznq4HJRhdHemC6" class="venue-link" target="_blank" rel="noopener">Khadija Secondary School</a><br/>
+        Date: 6th September 2025<br/>
         <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
       </div>
       <div class="tournament-item">
         <span class="tournament-link">Mombasa Open Chess Championship 2025</span> — Venue: 
-        <a href="https://maps.app.goo.gl/56fNJXtDmzyAYHDp8" class="venue-link" target="_blank" rel="noopener">Light International School Mombasa</a><br />
-        Dates: 10th to 12th October 2025<br />
+        <a href="https://maps.app.goo.gl/56fNJXtDmzyAYHDp8" class="venue-link" target="_blank" rel="noopener">Light International School Mombasa</a><br/>
+        Dates: 10th to 12th October 2025<br/>
         <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
       </div>
     </section>
@@ -343,18 +286,12 @@
       <h2>Gallery</h2>
       <p>Explore photos from tournaments, training sessions, school programs, and community events celebrating chess across Kilifi County.</p>
     </section>
-    <section id="play-section" aria-label="Play Chess Against Software">
+    <section id="play-section" aria-label="Play Chess">
       <h2>Play Chess</h2>
-      <label for="strength-select">Choose playing strength:</label>
-      <select id="strength-select" aria-describedby="strength-desc">
-        <option value="1">Beginner</option>
-        <option value="2">Easy</option>
-        <option value="3" selected>Intermediate</option>
-        <option value="4">Advanced</option>
-        <option value="5">Master</option>
-      </select>
-      <div id="chessboard" aria-label="Chessboard" style="width: 400px"></div>
-      <p id="status" style="font-weight:600; color:#004080;"></p>
+      <iframe src="https://lichess.org/ai" title="Lichess AI Chessboard" allowfullscreen></iframe>
+      <p style="font-size: 0.9rem; color: #004080; margin-top: 0.5rem;">
+        Play chess powered by Lichess AI engine.
+      </p>
     </section>
     <section id="move-of-the-day-section" aria-label="Move of the Day">
       <h2>Move of the Day</h2>
@@ -420,97 +357,5 @@
   <footer>
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
   </footer>
-  <!-- LIBRARIES -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chess.js@1.0.0/chess.min.js"></script>
-  <!-- STOCKFISH WEB WORKER -->
-  <script>
-    $(function() {
-      var board = null;
-      var game = new Chess();
-      // Depth map for playing strength
-      const strengthMap = {
-        1: 5,
-        2: 8,
-        3: 12,
-        4: 16,
-        5: 20
-      };
-      var searchDepth = strengthMap[3]; // default Intermediate
-      
-      var engine = new Worker('https://cdn.jsdelivr.net/npm/stockfish@15.1/stockfish.min.js');
-      var engineReady = false;
-      var engineBusy = false;
-      var statusEl = document.getElementById('status');
-      var strengthSelect = document.getElementById('strength-select');
-      engine.postMessage('uci');
-      engine.postMessage('isready');
-      engine.onmessage = function(event) {
-        var line = event.data;
-        if (line === 'uciok') {
-          engineReady = true;
-          statusEl.textContent = 'Engine ready. Your move!';
-        }
-        if (line === 'readyok') {
-          engineReady = true;
-        }
-        if (line.startsWith('bestmove')) {
-          var bestMove = line.split(' ')[1];
-          game.move(bestMove, { sloppy: true });
-          board.position(game.fen());
-          engineBusy = false;
-          if (game.game_over()) {
-            statusEl.textContent = 'Game Over! Please refresh to restart.';
-          } else {
-            statusEl.textContent = 'Your move!';
-          }
-        }
-      };
-      function makeEngineMove() {
-        if (!engineReady || engineBusy) return;
-        engineBusy = true;
-        statusEl.textContent = 'Engine thinking...';
-        engine.postMessage('position fen ' + game.fen());
-        engine.postMessage('go depth ' + searchDepth);
-      }
-      function onDragStart(source, piece) {
-        if (game.in_checkmate() || game.in_stalemate() || engineBusy) return false;
-        if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-            (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
-          return false;
-        }
-      }
-      function onDrop(source, target) {
-        if (engineBusy) return 'snapback';
-        var move = game.move({
-          from: source,
-          to: target,
-          promotion: 'q'
-        });
-        if (move === null) return 'snapback';
-        board.position(game.fen());
-        if (game.game_over()) {
-          statusEl.textContent = 'Game Over!';
-          return;
-        }
-        setTimeout(makeEngineMove, 250);
-      }
-      function onSnapEnd() {
-        board.position(game.fen());
-      }
-      board = Chessboard('chessboard', {
-        draggable: true,
-        position: 'start',
-        onDragStart: onDragStart,
-        onDrop: onDrop,
-        onSnapEnd: onSnapEnd,
-        pieceTheme: 'https://cdn.jsdelivr.net/npm/chessboardjs@1.0.0/img/chesspieces/wikipedia/{piece}.png'
-      });
-      strengthSelect.addEventListener('change', function() {
-        searchDepth = strengthMap[this.value];
-      });
-    });
-  </script>
 </body>
 </html>
