@@ -91,6 +91,15 @@
       border: 3px solid #004080;
       margin-bottom: 0.5rem;
       background: #ccc;
+      cursor: pointer;
+    }
+    .player-card a {
+      color: #004080;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .player-card a:hover {
+      text-decoration: underline;
     }
     .contact-whatsapp {
       background: #25d366;
@@ -214,6 +223,31 @@
     #partners li a:hover {
       text-decoration: underline;
     }
+    /* Style for Upcoming Tournaments links */
+    .tournament-link, .venue-link {
+      color: #004080;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .tournament-link:hover, .venue-link:hover {
+      text-decoration: underline;
+    }
+    .register-link {
+      margin-left: 1rem;
+      background-color: #004080;
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .register-link:hover {
+      background-color: #00264d;
+    }
+    .tournament-item {
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -243,30 +277,51 @@
       <h2>Top Players of Kilifi County</h2>
       <div class="players-grid">
         <article class="player-card">
-          <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/FB_IMG_1756595834129_gznrml.jpg" alt="Master Jackson Kalema" />
-          <p>Master Jackson Kalema</p>
+          <a href="https://ratings.fide.com/profile/10802541" target="_blank" rel="noopener" title="Master Jackson Kalema FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/FB_IMG_1756595834129_gznrml.jpg" alt="Master Jackson Kalema" />
+            <p>Master Jackson Kalema</p>
+          </a>
         </article>
         <article class="player-card">
-          <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/IMG_20250816_141244_197_z5kcdo.jpg" alt="Chahindi Mbiu Muluda" />
-          <p>Chahindi Mbiu Muluda</p>
+          <a href="https://ratings.fide.com/profile/10815023" target="_blank" rel="noopener" title="Chahindi Mbiu Muluda FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/IMG_20250816_141244_197_z5kcdo.jpg" alt="Chahindi Mbiu Muluda" />
+            <p>Chahindi Mbiu Muluda</p>
+          </a>
         </article>
         <article class="player-card">
-          <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598258/FB_IMG_1756595683097_nng5iy.jpg" alt="Ngugi Clinton" />
-          <p>Ngugi Clinton</p>
+          <a href="https://ratings.fide.com/profile/10831312" target="_blank" rel="noopener" title="Ngugi Clinton FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598258/FB_IMG_1756595683097_nng5iy.jpg" alt="Ngugi Clinton" />
+            <p>Ngugi Clinton</p>
+          </a>
         </article>
         <article class="player-card">
-          <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/WhatsApp-Image-2019-10-20-at-4.47.05-PM-768x627_jvk9vl.jpg" alt="Daniel Kimaiga" />
-          <p>Daniel Kimaiga</p>
+          <a href="https://ratings.fide.com/profile/10823174" target="_blank" rel="noopener" title="Daniel Kimaiga FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598260/WhatsApp-Image-2019-10-20-at-4.47.05-PM-768x627_jvk9vl.jpg" alt="Daniel Kimaiga" />
+            <p>Daniel Kimaiga</p>
+          </a>
         </article>
         <article class="player-card">
-          <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598259/IMG-20250712-WA0039_vw0q3k.jpg" alt="Jenssveen Trym" />
-          <p>Jenssveen Trym</p>
+          <a href="https://ratings.fide.com/profile/1508814" target="_blank" rel="noopener" title="Jenssveen Trym FIDE Profile">
+            <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1756598259/IMG-20250712-WA0039_vw0q3k.jpg" alt="Jenssveen Trym" />
+            <p>Jenssveen Trym</p>
+          </a>
         </article>
       </div>
     </section>
     <section id="upcoming-tournaments" aria-label="Upcoming Tournaments">
       <h2>Upcoming Tournaments</h2>
-      <p>Stay tuned! Dates and details of upcoming Kilifi County chess tournaments will be announced here.</p>
+      <div class="tournament-item">
+        <span class="tournament-link">MCC Monthly Rated Tournament</span> — Venue: 
+        <a href="https://maps.app.goo.gl/H2Uznq4HJRhdHemC6" class="venue-link" target="_blank" rel="noopener">Khadija Secondary School</a><br />
+        Date: 6th September 2025<br />
+        <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
+      </div>
+      <div class="tournament-item">
+        <span class="tournament-link">Mombasa Open Chess Championship 2025</span> — Venue: 
+        <a href="https://maps.app.goo.gl/56fNJXtDmzyAYHDp8" class="venue-link" target="_blank" rel="noopener">Light International School Mombasa</a><br />
+        Dates: 10th to 12th October 2025<br />
+        <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
+      </div>
     </section>
     <section id="chess-in-schools" aria-label="Chess In Schools">
       <h2>Chess in Schools</h2>
@@ -458,5 +513,4 @@
     });
   </script>
 </body>
-          </html>
-  
+</html>
