@@ -197,6 +197,26 @@
     #play-image:hover {
       transform: scale(1.05);
     }
+    /* New styling for images in sections */
+    .section-image {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,64,128,0.3);
+      margin: 1rem 0 1.5rem 0;
+      display: block;
+      height: auto;
+    }
+    .home-training-images {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .home-training-images img {
+      max-width: 48%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,64,128,0.3);
+    }
   </style>
 </head>
 <body>
@@ -286,18 +306,40 @@
     </section>
     <section id="chess-in-schools" aria-label="Chess In Schools">
       <h2>Chess in Schools</h2>
-      <p>We collaborate with schools across Kilifi County to introduce chess clubs and offer chess training to young minds, promoting critical thinking and problem-solving skills.</p>
+      <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757183729/Gemini_Generated_Image_8979ph8979ph8979_tv4qkh.png" alt="Chess in Schools" class="section-image" />
+      <p>
+        We collaborate with schools across Kilifi County to introduce chess clubs and offer chess training to young minds, promoting critical thinking and problem-solving skills.
+      </p>
+      <p>
+        Chess is actively played at <a href="https://www.mudzinischool.org/" target="_blank" rel="noopener">Mudzini School</a> and <a href="https://www.sandpiperinternationalschool.com/" target="_blank" rel="noopener">Sandpiper International School</a>.
+      </p>
     </section>
     <section id="home-training" aria-label="Home Chess Training">
       <h2>Home Chess Training</h2>
-      <p>Access online resources, tutorials, and training modules designed for players to improve their chess skills from the comfort of their homes.</p>
+      <div class="home-training-images">
+        <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757184351/unnamed_3_r79xlm.png" alt="Home Chess Training 1" />
+        <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757184351/unnamed_2_xg3d4n.png" alt="Home Chess Training 2" />
+      </div>
+      <p>
+        The Kilifi Chess Association has a team of dedicated, seasoned players who deliver home chess lessons for persons of any age.
+      </p>
+      <p>
+        Access online resources, tutorials, and training modules designed for players to improve their chess skills from the comfort of their homes.
+      </p>
     </section>
     <section id="weekend-practice" aria-label="Weekend Chess Practice">
       <h2>Weekend Chess Practice</h2>
-      <p>Join us every weekend for practice sessions open to all skill levels. Dates, times, and venues are shared regularly, fostering community and friendly competition.</p>
+      <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757184351/unnamed_4_mgzugc.png" alt="Weekend Chess Practice" class="section-image" />
+      <p>
+        Join us every weekend for practice sessions open to all skill levels. Active practice happens on weekends at Pwani University, Kivukoni, and Mnarani, plus many other areas.
+      </p>
+      <p>
+        Dates, times, and venues are shared regularly, fostering community and friendly competition.
+      </p>
     </section>
     <section id="merchandise" aria-label="Chess Merchandise">
       <h2>Chess Merchandise</h2>
+      <img src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757185478/Gemini_Generated_Image_amwwwiamwwwiamww_u0pyte.png" alt="Chess Merchandise" class="section-image" />
       <p>Show your Kilifi Chess pride! We offer official merchandise including chess sets, apparel, and accessories. Check back soon for an online store launch.</p>
     </section>
     <section id="gallery" aria-label="Gallery">
@@ -392,4 +434,3 @@
   </footer>
 </body>
   </html>
-      
