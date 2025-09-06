@@ -57,6 +57,8 @@
       padding: 1.5rem 2rem;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
     h2 {
       border-bottom: 3px solid #004080;
@@ -217,6 +219,25 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,64,128,0.3);
     }
+    /* Establishment section background overlay with Kenyan flag */
+    #establishment-section {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    #establishment-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://res.cloudinary.com/dfmpym7ed/image/upload/v1757187197/Flag_of_Kenya.svg_iq50yq.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
@@ -236,7 +257,7 @@
     <a href="#contact">Contact Us</a>
   </nav>
   <main>
-    <section aria-label="Legal Establishment Statement">
+    <section id="establishment-section" aria-label="Legal Establishment Statement">
       <p style="max-width:700px; margin: 0.5rem auto 2rem auto; line-height:1.5; color:#004080; font-style: italic;">
         The Kilifi County Chess Association was formally established in the year 2024 pursuant to the mandates stipulated under the Sports Act, which requires the constitution of county-level sporting associations. In observance of Article 10 of the Constitution of Kenya, this association is constituted to promote organized chess activities within Kilifi County, ensuring compliance with national governance structures and fostering the integrity, development, and regulation of the sport at the county level.
       </p>
@@ -297,13 +318,13 @@
     <section id="upcoming-tournaments" aria-label="Upcoming Tournaments">
       <h2>Upcoming Tournaments</h2>
       <div class="tournament-item">
-        <span class="tournament-link">MCC Monthly Rated Tournament</span> — Venue: 
+        <span class="tournament-link">MCC Monthly Rated Tournament</span> — Venue:
         <a href="https://maps.app.goo.gl/H2Uznq4HJRhdHemC6" class="venue-link" target="_blank" rel="noopener">Khadija Secondary School</a><br/>
         Date: 6th September 2025<br/>
         <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
       </div>
       <div class="tournament-item">
-        <span class="tournament-link">Mombasa Open Chess Championship 2025</span> — Venue: 
+        <span class="tournament-link">Mombasa Open Chess Championship 2025</span> — Venue:
         <a href="https://maps.app.goo.gl/56fNJXtDmzyAYHDp8" class="venue-link" target="_blank" rel="noopener">Light International School Mombasa</a><br/>
         Dates: 10th to 12th October 2025<br/>
         <a href="https://mchessacademy.co.ke/tournaments" class="register-link" target="_blank" rel="noopener">Register Here</a>
@@ -353,7 +374,7 @@
     </section>
     <section id="play-section" aria-label="Play Chess">
       <h2>Play Chess</h2>
-      <img id="play-image" src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Chess_Diagram_Sample.svg" alt="Play Chess" onclick="window.open('https://lichess.org/ai', '_blank')" />
+      <img id="play-image" src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757187086/Gemini_Generated_Image_490kp3490kp3490k_lfscck.png" alt="Play Chess" onclick="window.open('https://lichess.org/ai', '_blank')" />
       <a href="https://lichess.org/ai" target="_blank" rel="noopener" class="register-link" style="margin-top: 1rem; display: inline-block;">
         Play Chess Against Lichess AI
       </a>
@@ -438,5 +459,6 @@
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
   </footer>
 </body>
-        </html>
-  
+</html>
+
+    
