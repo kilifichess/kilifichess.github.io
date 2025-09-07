@@ -238,6 +238,17 @@
       pointer-events: none;
       z-index: -1;
     }
+    /* Styling for embedded puzzle iframe */
+    #lichess-puzzle {
+      width: 100%;
+      max-width: 480px;
+      height: 480px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,64,128,0.4);
+      margin: 1rem auto 0 auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -253,7 +264,7 @@
     <a href="#merchandise">Chess Merchandise</a>
     <a href="#gallery">Gallery</a>
     <a href="#play-section">Play</a>
-    <a href="#move-of-the-day-section">Move of the Day</a>
+    <a href="#move-of-the-day-section">Puzzle of the Day</a>
     <a href="#contact">Contact Us</a>
   </nav>
   <main>
@@ -370,7 +381,14 @@
     </section>
     <section id="gallery" aria-label="Gallery">
       <h2>Gallery</h2>
-      <p>Explore photos from tournaments, training sessions, school programs, and community events celebrating chess across Kilifi County.</p>
+      <p>
+        Explore photos from tournaments, training sessions, school programs, and community events celebrating chess across Kilifi County.
+      </p>
+      <p>
+        <a href="https://photos.app.goo.gl/d6rSuafPPZkz5Jbw6" target="_blank" rel="noopener noreferrer" class="register-link" style="max-width: fit-content;">
+          View Our Photo Album
+        </a>
+      </p>
     </section>
     <section id="play-section" aria-label="Play Chess">
       <h2>Play Chess</h2>
@@ -382,9 +400,9 @@
         Opens in a new tab: powered by Lichess AI.
       </p>
     </section>
-    <section id="move-of-the-day-section" aria-label="Move of the Day">
-      <h2>Move of the Day</h2>
-      <p id="move-of-the-day">♞ Nf3! The knight coming to f3, a classic and powerful move developing control over the center.</p>
+    <section id="move-of-the-day-section" aria-label="Puzzle of the Day">
+      <h2>Puzzle of the Day</h2>
+      <iframe id="lichess-puzzle" src="https://lichess.org/training/embed/daily" title="Lichess Puzzle of the Day" allowfullscreen></iframe>
     </section>
     <section id="partners" aria-label="Partners">
       <h2>Our Partners</h2>
@@ -461,4 +479,3 @@
 </body>
 </html>
 
-    
