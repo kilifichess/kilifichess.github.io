@@ -185,20 +185,6 @@
       background-color: #00264d;
       text-decoration: none;
     }
-    /* Play Chess Image styling */
-    #play-image {
-      max-width: 600px;
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(0,64,128,0.4);
-      margin: 0.5rem auto 1rem;
-      display: block;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    #play-image:hover {
-      transform: scale(1.05);
-    }
     /* New styling for images in sections */
     .section-image {
       max-width: 100%;
@@ -238,17 +224,6 @@
       pointer-events: none;
       z-index: -1;
     }
-    /* Styling for embedded puzzle iframe */
-    #lichess-puzzle {
-      width: 100%;
-      max-width: 480px;
-      height: 480px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,64,128,0.4);
-      margin: 1rem auto 0 auto;
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -263,8 +238,6 @@
     <a href="#weekend-practice">Weekend Chess Practice</a>
     <a href="#merchandise">Chess Merchandise</a>
     <a href="#gallery">Gallery</a>
-    <a href="#play-section">Play</a>
-    <a href="#move-of-the-day-section">Puzzle of the Day</a>
     <a href="#contact">Contact Us</a>
   </nav>
   <main>
@@ -390,20 +363,6 @@
         </a>
       </p>
     </section>
-    <section id="play-section" aria-label="Play Chess">
-      <h2>Play Chess</h2>
-      <img id="play-image" src="https://res.cloudinary.com/dfmpym7ed/image/upload/v1757187086/Gemini_Generated_Image_490kp3490kp3490k_lfscck.png" alt="Play Chess" onclick="window.open('https://lichess.org/ai', '_blank')" />
-      <a href="https://lichess.org/ai" target="_blank" rel="noopener" class="register-link" style="margin-top: 1rem; display: inline-block;">
-        Play Chess Against Lichess AI
-      </a>
-      <p style="font-size: 0.9rem; color: #004080; margin-top: 0.5rem;">
-        Opens in a new tab: powered by Lichess AI.
-      </p>
-    </section>
-    <section id="move-of-the-day-section" aria-label="Puzzle of the Day">
-      <h2>Puzzle of the Day</h2>
-      <iframe id="lichess-puzzle" src="https://lichess.org/training/embed/daily" title="Lichess Puzzle of the Day" allowfullscreen></iframe>
-    </section>
     <section id="partners" aria-label="Partners">
       <h2>Our Partners</h2>
       <ul>
@@ -477,5 +436,5 @@
     <p>© 2025 Kilifi County Chess Association. All rights reserved.</p>
   </footer>
 </body>
-</html>
-
+  </html>
+  
